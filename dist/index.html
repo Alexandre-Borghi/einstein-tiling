@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Einstein Tiling Generator - Alexandre Borghi</title>
+
+    <style>
+      html,
+      body {
+        background-color: #333333;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Einstein Tiling Generator - Alexandre Borghi</h1>
+    <canvas></canvas>
+
+    <script type="module">
+      console.log("fetching wasm file...");
+      const response = await fetch("einstein_tiling.wasm");
+      console.log("wasm file fetched successfully, reading contents...");
+      const bytes = await response.arrayBuffer();
+      console.log("read contents successfully, instantiating module...");
+      const { instance } = await WebAssembly.instantiate(bytes, {});
+      console.log("module instantiated successfully");
+      const { get_one } = instance.exports;
+      console.log(`result: ${get_one()}`);
+    </script>
+  </body>
+</html>
