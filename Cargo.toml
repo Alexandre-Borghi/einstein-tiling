@@ -7,3 +7,14 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+wasm-bindgen = "0.2"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  "CanvasRenderingContext2d",
+  "Document",
+  "Element",
+  "HtmlCanvasElement",
+  "Window",
+]

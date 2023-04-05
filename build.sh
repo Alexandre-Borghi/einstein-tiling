@@ -8,4 +8,8 @@ mkdir -p $WWW_DIR
 
 cargo build --target $TARGET --$PROFILE
 
-cp target/$TARGET/$PROFILE/einstein_tiling.wasm $WWW_DIR/
+wasm-bindgen \
+    --out-dir $WWW_DIR \
+    --no-typescript \
+    --target web \
+    target/$TARGET/$PROFILE/einstein_tiling.wasm
