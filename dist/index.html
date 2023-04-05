@@ -16,12 +16,11 @@
     <canvas></canvas>
 
     <script type="module">
-      console.log("fetching wasm file...");
-      const response = await fetch("einstein_tiling.wasm");
-      console.log("wasm file fetched successfully, reading contents...");
-      const bytes = await response.arrayBuffer();
-      console.log("read contents successfully, instantiating module...");
-      const { instance } = await WebAssembly.instantiate(bytes, {});
+      console.log("loading wasm module...");
+      const { instance } = await WebAssembly.instantiateStreaming(
+        fetch("einstein_tiling.wasm"),
+        {}
+      );
       console.log("module instantiated successfully");
       const { get_one } = instance.exports;
       console.log(`result: ${get_one()}`);
