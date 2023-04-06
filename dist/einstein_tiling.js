@@ -135,9 +135,33 @@ function getImports() {
     imports.wbg.__wbg_setfillStyle_b065cfad34a78974 = function(arg0, arg1) {
         getObject(arg0).fillStyle = getObject(arg1);
     };
-    imports.wbg.__wbg_fillRect_f63ba845233f000a = function(arg0, arg1, arg2, arg3, arg4) {
-        getObject(arg0).fillRect(arg1, arg2, arg3, arg4);
+    imports.wbg.__wbg_beginPath_0948db80d0d23ce3 = function(arg0) {
+        getObject(arg0).beginPath();
     };
+    imports.wbg.__wbg_fill_ae4121c3dafa1f99 = function(arg0) {
+        getObject(arg0).fill();
+    };
+    imports.wbg.__wbg_closePath_ec8070a43cf8068c = function(arg0) {
+        getObject(arg0).closePath();
+    };
+    imports.wbg.__wbg_lineTo_b902f35217ff96ab = function(arg0, arg1, arg2) {
+        getObject(arg0).lineTo(arg1, arg2);
+    };
+    imports.wbg.__wbg_moveTo_b0d9695c44d309f0 = function(arg0, arg1, arg2) {
+        getObject(arg0).moveTo(arg1, arg2);
+    };
+    imports.wbg.__wbg_restore_38b3fc1b40a29757 = function(arg0) {
+        getObject(arg0).restore();
+    };
+    imports.wbg.__wbg_save_bab01f1913b2e819 = function(arg0) {
+        getObject(arg0).save();
+    };
+    imports.wbg.__wbg_scale_02831dbd975be520 = function() { return handleError(function (arg0, arg1, arg2) {
+        getObject(arg0).scale(arg1, arg2);
+    }, arguments) };
+    imports.wbg.__wbg_translate_775b28f4f71b0a4a = function() { return handleError(function (arg0, arg1, arg2) {
+        getObject(arg0).translate(arg1, arg2);
+    }, arguments) };
     imports.wbg.__wbg_instanceof_HtmlCanvasElement_f5f69dab93281ebe = function(arg0) {
         let result;
         try {
