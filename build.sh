@@ -2,7 +2,7 @@
 
 PROFILE="release"
 TARGET="wasm32-unknown-unknown"
-WWW_DIR="dist"
+WWW_DIR="docs"
 
 mkdir -p $WWW_DIR
 
