@@ -14,12 +14,14 @@ hosted here: <https://einstein.demos.aborghi.fr>.
 
 ### Dependencies
 
-Before building the code, you will need to install the following dependencies:
+Before building the code, you will need to install the following
+dependencies:
 
 - [The Rust programming
   language](https://www.rust-lang.org/tools/install)
 
-  After installing `rustup`, you will need to add the `wasm32-unknown-unknown` toolchain. For this, run:
+  After installing `rustup`, you will need to add the
+  `wasm32-unknown-unknown` toolchain. For this, run:
 
   ```
   $ rustup toolchain install wasm32-unknown-unknown
