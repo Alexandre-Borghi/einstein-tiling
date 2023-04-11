@@ -2,6 +2,8 @@ use wasm_bindgen::prelude::*;
 use web_sys::window;
 use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 
+const DEBUG_DRAW: bool = true;
+
 #[wasm_bindgen(start)]
 pub fn main() -> Result<(), JsValue> {
     let window = window().unwrap();
@@ -41,6 +43,14 @@ fn hat(ctx: &CanvasRenderingContext2d, x: f64, y: f64, scale: f64) -> Result<(),
     ctx.line_to(1.5, 0.8660254);
     ctx.close_path();
     ctx.fill();
+    if DEBUG_DRAW {
+        ctx.save();
+        ctx.set_fill_style(&"red".into());
+        ctx.begin_path();
+        ctx.ellipse(0., 0., 0.2, 0.2, 0., 0., std::f64::consts::TAU)?;
+        ctx.fill();
+        ctx.restore();
+    }
     ctx.restore();
     Ok(())
 }
