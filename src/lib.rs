@@ -17,7 +17,10 @@ pub fn main() -> Result<(), JsValue> {
         .unwrap()
         .dyn_into::<CanvasRenderingContext2d>()?;
     ctx.set_fill_style(&"white".into());
-    hat(&ctx, 200., 200., 50., 1.)?;
+    hat(&ctx, 100., 100., 25., 0., false)?;
+    hat(&ctx, 300., 100., 25., 1., false)?;
+    hat(&ctx, 25., 300., 25., 0., true)?;
+    hat(&ctx, 250., 250., 25., 1., true)?;
     Ok(())
 }
 
@@ -27,11 +30,16 @@ fn hat(
     y: f64,
     scale: f64,
     angle: f64,
+    flip: bool,
 ) -> Result<(), JsValue> {
     ctx.save();
     ctx.translate(x, y)?;
     ctx.rotate(angle);
-    ctx.scale(scale, scale)?;
+    if flip {
+        ctx.scale(-scale, scale)?;
+    } else {
+        ctx.scale(scale, scale)?;
+    }
     ctx.begin_path();
     ctx.move_to(0., 0.);
     // https://github.com/christianp/aperiodic-monotile/blob/9844d8b093b54b4c3e13a2ca43fb26d437f3c68b/hat-monotile.svg
