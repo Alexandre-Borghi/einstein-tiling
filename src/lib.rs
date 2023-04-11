@@ -19,10 +19,10 @@ pub fn main() -> Result<(), JsValue> {
     ctx.set_fill_style(&"white".into());
     ctx.set_stroke_style(&"black".into());
     ctx.set_line_width(0.1);
-    hat(&ctx, 100., 100., 25., 0., false)?;
-    hat(&ctx, 300., 100., 25., 1., false)?;
-    hat(&ctx, 25., 300., 25., 0., true)?;
-    hat(&ctx, 250., 250., 25., 1., true)?;
+    hat(&ctx, 50., 75., 25., 0., false)?;
+    hat(&ctx, 300., 25., 25., 1., false)?;
+    hat(&ctx, 125., 300., 25., 0., true)?;
+    hat(&ctx, 330., 300., 25., 1., true)?;
     Ok(())
 }
 
@@ -38,9 +38,9 @@ fn hat(
     ctx.translate(x, y)?;
     ctx.rotate(angle);
     if flip {
-        ctx.scale(-scale, scale)?;
-    } else {
         ctx.scale(scale, scale)?;
+    } else {
+        ctx.scale(-scale, scale)?;
     }
     ctx.begin_path();
     ctx.move_to(0., 0.);
