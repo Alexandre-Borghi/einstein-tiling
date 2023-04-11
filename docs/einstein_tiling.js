@@ -132,14 +132,23 @@ function getImports() {
         const ret = result;
         return ret;
     };
+    imports.wbg.__wbg_setstrokeStyle_073fc10b086c1727 = function(arg0, arg1) {
+        getObject(arg0).strokeStyle = getObject(arg1);
+    };
     imports.wbg.__wbg_setfillStyle_b065cfad34a78974 = function(arg0, arg1) {
         getObject(arg0).fillStyle = getObject(arg1);
+    };
+    imports.wbg.__wbg_setlineWidth_2b5a5da5c4bf4084 = function(arg0, arg1) {
+        getObject(arg0).lineWidth = arg1;
     };
     imports.wbg.__wbg_beginPath_0948db80d0d23ce3 = function(arg0) {
         getObject(arg0).beginPath();
     };
     imports.wbg.__wbg_fill_ae4121c3dafa1f99 = function(arg0) {
         getObject(arg0).fill();
+    };
+    imports.wbg.__wbg_stroke_6e1b85c72caa53ea = function(arg0) {
+        getObject(arg0).stroke();
     };
     imports.wbg.__wbg_closePath_ec8070a43cf8068c = function(arg0) {
         getObject(arg0).closePath();

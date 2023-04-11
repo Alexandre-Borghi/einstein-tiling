@@ -17,6 +17,8 @@ pub fn main() -> Result<(), JsValue> {
         .unwrap()
         .dyn_into::<CanvasRenderingContext2d>()?;
     ctx.set_fill_style(&"white".into());
+    ctx.set_stroke_style(&"black".into());
+    ctx.set_line_width(0.1);
     hat(&ctx, 100., 100., 25., 0., false)?;
     hat(&ctx, 300., 100., 25., 1., false)?;
     hat(&ctx, 25., 300., 25., 0., true)?;
@@ -58,6 +60,7 @@ fn hat(
     ctx.line_to(1.5, 0.8660254);
     ctx.close_path();
     ctx.fill();
+    ctx.stroke();
     if DEBUG_DRAW {
         ctx.save();
         ctx.set_fill_style(&"red".into());
