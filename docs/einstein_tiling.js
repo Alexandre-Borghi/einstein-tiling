@@ -159,6 +159,9 @@ function getImports() {
     imports.wbg.__wbg_save_bab01f1913b2e819 = function(arg0) {
         getObject(arg0).save();
     };
+    imports.wbg.__wbg_rotate_6b035a321d3e851f = function() { return handleError(function (arg0, arg1) {
+        getObject(arg0).rotate(arg1);
+    }, arguments) };
     imports.wbg.__wbg_scale_02831dbd975be520 = function() { return handleError(function (arg0, arg1, arg2) {
         getObject(arg0).scale(arg1, arg2);
     }, arguments) };

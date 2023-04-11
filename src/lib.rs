@@ -17,13 +17,20 @@ pub fn main() -> Result<(), JsValue> {
         .unwrap()
         .dyn_into::<CanvasRenderingContext2d>()?;
     ctx.set_fill_style(&"white".into());
-    hat(&ctx, 200., 200., 50.)?;
+    hat(&ctx, 200., 200., 50., 1.)?;
     Ok(())
 }
 
-fn hat(ctx: &CanvasRenderingContext2d, x: f64, y: f64, scale: f64) -> Result<(), JsValue> {
+fn hat(
+    ctx: &CanvasRenderingContext2d,
+    x: f64,
+    y: f64,
+    scale: f64,
+    angle: f64,
+) -> Result<(), JsValue> {
     ctx.save();
     ctx.translate(x, y)?;
+    ctx.rotate(angle);
     ctx.scale(scale, scale)?;
     ctx.begin_path();
     ctx.move_to(0., 0.);
