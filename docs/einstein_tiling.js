@@ -153,9 +153,6 @@ function getImports() {
     imports.wbg.__wbg_closePath_ec8070a43cf8068c = function(arg0) {
         getObject(arg0).closePath();
     };
-    imports.wbg.__wbg_ellipse_bb87c0d6adb78e48 = function() { return handleError(function (arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) {
-        getObject(arg0).ellipse(arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-    }, arguments) };
     imports.wbg.__wbg_lineTo_b902f35217ff96ab = function(arg0, arg1, arg2) {
         getObject(arg0).lineTo(arg1, arg2);
     };
